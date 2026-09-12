@@ -1,183 +1,185 @@
 export default function Contact() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-slate-950 px-6 py-24 text-white">
+    <main className="relative min-h-screen overflow-hidden bg-slate-950 px-6 py-24 text-white">
 
       {/* Background Glow */}
-      <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-cyan-500/20 blur-3xl" />
-      <div className="absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl" />
+      <div className="absolute -left-24 top-20 h-80 w-80 rounded-full bg-cyan-500/20 blur-3xl"></div>
+
+      <div className="absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-purple-600/20 blur-3xl"></div>
 
       <div className="relative mx-auto max-w-6xl">
 
-        {/* ================= HEADER ================= */}
+        {/* Heading */}
         <div className="mb-16 text-center">
 
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
-            Get In Touch
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
+            Let's Connect
           </p>
 
-          <h1 className="text-4xl font-bold md:text-5xl">
-            Let's{" "}
-            <span className="text-cyan-400">
-              Connect
-            </span>
+          <h1 className="mt-3 text-4xl font-extrabold md:text-6xl">
+            Get In <span className="text-cyan-400">Touch</span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-slate-400">
-            Have a project, opportunity, or just want to say hello?
-            Feel free to reach out. I'd love to hear from you.
+            Have a project idea, collaboration opportunity, or just want to
+            say hello? I'd love to hear from you.
           </p>
 
         </div>
 
+        {/* Main Content */}
+        <div className="grid gap-8 lg:grid-cols-5">
 
-        {/* ================= MAIN CONTENT ================= */}
-        <div className="grid gap-8 md:grid-cols-2">
+          {/* Contact Information */}
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 backdrop-blur lg:col-span-2">
 
-
-          {/* ================= CONTACT FORM ================= */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-8 shadow-2xl backdrop-blur">
-
-            <h2 className="mb-6 text-2xl font-semibold">
-              Send Me a Message
+            <h2 className="text-2xl font-bold">
+              Let's Talk
             </h2>
 
-            <form className="space-y-5">
+            <p className="mt-4 leading-7 text-slate-400">
+              I'm open to discussing frontend development, AI projects,
+              internships, collaborations, and new opportunities.
+            </p>
 
-              {/* Name */}
+            <div className="mt-8 space-y-4">
+
+              {/* Email */}
+              <a
+                href="mailto:your-email@gmail.com"
+                className="block rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-cyan-400/60"
+              >
+                <p className="text-sm text-slate-500">
+                  Email
+                </p>
+
+                <p className="mt-1 text-cyan-400">
+                  your-email@gmail.com
+                </p>
+              </a>
+
+              {/* GitHub */}
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-cyan-400/60"
+              >
+                <p className="text-sm text-slate-500">
+                  GitHub
+                </p>
+
+                <p className="mt-1 text-slate-200">
+                  GitHub Profile
+                </p>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-2xl border border-slate-800 bg-slate-950/70 p-4 transition hover:border-cyan-400/60"
+              >
+                <p className="text-sm text-slate-500">
+                  LinkedIn
+                </p>
+
+                <p className="mt-1 text-slate-200">
+                  LinkedIn Profile
+                </p>
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* Contact Form */}
+          <form
+            className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 backdrop-blur lg:col-span-3"
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert("Thank you! Your message has been submitted.");
+            }}
+          >
+
+            {/* Name + Email */}
+            <div className="grid gap-6 md:grid-cols-2">
+
               <div>
-                <label className="mb-2 block text-sm text-slate-300">
-                  Name
+                <label className="mb-2 block text-sm font-medium text-slate-300">
+                  Your Name
                 </label>
 
                 <input
                   type="text"
-                  placeholder="Your Name"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-white outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                  placeholder="Enter your name"
+                  required
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400"
                 />
               </div>
 
-
-              {/* Email */}
               <div>
-                <label className="mb-2 block text-sm text-slate-300">
-                  Email
+                <label className="mb-2 block text-sm font-medium text-slate-300">
+                  Email Address
                 </label>
 
                 <input
                   type="email"
-                  placeholder="your@email.com"
-                  className="w-full rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-white outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                  placeholder="you@example.com"
+                  required
+                  className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400"
                 />
               </div>
 
+            </div>
 
-              {/* Message */}
-              <div>
-                <label className="mb-2 block text-sm text-slate-300">
-                  Message
-                </label>
+            {/* Subject */}
+            <div className="mt-6">
 
-                <textarea
-                  rows="5"
-                  placeholder="Write your message..."
-                  className="w-full resize-none rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-white outline-none transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
-                />
-              </div>
+              <label className="mb-2 block text-sm font-medium text-slate-300">
+                Subject
+              </label>
 
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-6 py-3 font-semibold text-white transition duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/20"
-              >
-                Send Message →
-              </button>
-
-            </form>
-
-          </div>
-
-
-
-          {/* ================= YOUR INFO ================= */}
-          <div className="space-y-6">
-
-
-            {/* Work Together Card */}
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-8 backdrop-blur">
-
-              <h2 className="mb-6 text-2xl font-semibold">
-                Let's Work Together
-              </h2>
-
-              <p className="leading-7 text-slate-400">
-                I'm always open to discussing new projects, creative ideas,
-                internships, collaborations, and exciting opportunities.
-              </p>
+              <input
+                type="text"
+                placeholder="What would you like to discuss?"
+                required
+                className="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400"
+              />
 
             </div>
 
+            {/* Message */}
+            <div className="mt-6">
 
-            {/* Email Card */}
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50">
+              <label className="mb-2 block text-sm font-medium text-slate-300">
+                Message
+              </label>
 
-              <p className="text-sm text-slate-500">
-                Email
-              </p>
-
-              <a
-                href="mailto:adititripathi066@gmail.com"
-                className="mt-2 block text-cyan-400 transition hover:text-cyan-300"
-              >
-                adititripathi066@gmail.com
-              </a>
-
-            </div>
-
-
-            {/* GitHub Card */}
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-purple-400/50">
-
-              <p className="text-sm text-slate-500">
-                GitHub
-              </p>
-
-              <a
-                href="https://github.com/adititripathi066-beep"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 block text-purple-400 transition hover:text-purple-300"
-              >
-                GitHub Profile →
-              </a>
+              <textarea
+                rows="7"
+                placeholder="Write your message here..."
+                required
+                className="w-full resize-none rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-400"
+              ></textarea>
 
             </div>
 
+            {/* Button */}
+            <button
+              type="submit"
+              className="mt-6 w-full rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 px-6 py-3 font-bold transition hover:scale-[1.01] hover:from-cyan-400 hover:to-purple-500"
+            >
+              Send Message
+            </button>
 
-            {/* LinkedIn Card */}
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50">
-
-              <p className="text-sm text-slate-500">
-                LinkedIn
-              </p>
-
-              <a
-                href="https://www.linkedin.com/in/aditi-tripathi-0639822b4/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 block text-cyan-400 transition hover:text-cyan-300"
-              >
-                LinkedIn Profile →
-              </a>
-
-            </div>
-
-          </div>
+          </form>
 
         </div>
 
       </div>
 
-    </section>
+    </main>
   );
 }
